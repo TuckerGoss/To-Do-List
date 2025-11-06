@@ -1,0 +1,51 @@
+#heading
+{
+ text-align: center;
+ 
+}
+#subheading
+{
+    text-align: center;
+    background-color: beige;
+    margin-Left: 25%;
+    margin-right:25%;
+    margin-bottom:0;;
+
+}
+#list
+{
+        background-color: aquamarine;
+
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 0px;
+    padding-bottom: 1rem;
+    padding-top: .25rem
+}
+.task
+{
+    margin-left: 1rem;
+    margin-right: 2rem;
+    font-weight: bold;
+
+}
+.complete
+{
+    color: white;
+    font-weight: bolder;
+    background-color: green;
+    margin: .37rem;
+}
+.delete
+{
+    color: white;
+    background-color: red;
+    font-weight: bolder;
+    margin: .37rem;
+}
+.done
+{
+    text-decoration: line-through;
+    color:gray;
+}
+
