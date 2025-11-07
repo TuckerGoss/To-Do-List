@@ -1,7 +1,8 @@
 const list = document.getElementById("list"); // unordered list of tasks
 const textbox = document.getElementById("write");// This is the text input field in the HTML document
 const txtRe = /^[]{0}$/; // textbox is empty
-
+let save = localStorage.getItem("list");
+list.innerHTML = save;
 textbox.addEventListener("keydown", (e)=> // This lets you submit a task by pressing enter instead of clicking the add task button
 {
     if(e.key == "Enter")
@@ -19,11 +20,13 @@ list.addEventListener("click", (e) =>
         parent.className = "done";
         parent.children[0].className = "done"; //this is word in the addTask function
         parent.children[1].className ="done";//this is comp in the addTask function
+        updateSave();
     }
     else if(btn.className == "delete")
     {
         parent =btn.parentElement; // this is task in the addTask function
         list.removeChild(parent);
+        updateSave();
     }
 });
 
@@ -46,5 +49,14 @@ if(!txtRe.test(textbox.value.trim()))// makes sure textbox is not empty
     task.appendChild(comp); // comp must be added second for the complete button to work
     task.appendChild(del);
     list.appendChild(task);
+    updateSave();
 }
 }
+
+function updateSave()
+{
+    save =list.innerHTML;
+    localStorage.setItem("list", save);
+
+}
+
