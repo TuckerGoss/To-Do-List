@@ -12,10 +12,18 @@
     margin-bottom:0;;
 
 }
-#list
+.list
 {
-        background-color: aquamarine;
-
+    background-color: aquamarine;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 0px;
+    padding-bottom: 1rem;
+    padding-top: .25rem
+}
+.empty
+{
+    background-color: white;
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 0px;
@@ -48,4 +56,5 @@
     text-decoration: line-through;
     color:gray;
 }
+
 
