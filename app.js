@@ -3,6 +3,10 @@ const textbox = document.getElementById("write");// This is the text input field
 const txtRe = /^[]{0}$/; // textbox is empty
 let save = localStorage.getItem("list");
 list.innerHTML = save;
+if(list.childElementCount !=0)
+{
+    list.className ="list";
+}
 textbox.addEventListener("keydown", (e)=> // This lets you submit a task by pressing enter instead of clicking the add task button
 {
     if(e.key == "Enter")
@@ -53,10 +57,19 @@ if(!txtRe.test(textbox.value.trim()))// makes sure textbox is not empty
 }
 }
 
-function updateSave()
+function updateSave()// This function should be called anytime list is updated 
 {
     save =list.innerHTML;
     localStorage.setItem("list", save);
+    if(list.childElementCount==0)// this checks if list is empty and updates changes the background color based on the result
+    {
+     list.className = "empty";
+    }
+    else
+    {
+    list.className ="list";
+    }
 
 }
+
 
